@@ -42,48 +42,6 @@
           "bin/placeholder/_._": {}
         }
       }
-    },
-    "net6.0/win-x64": {
-      "Newtonsoft.Json/13.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "TagLibSharp/2.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/TagLibSharp.dll": {
-            "related": ".pdb"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/_._": {
-            "related": ".pdb"
-          }
-        }
-      },
-      "ShareInstances/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
-          "TagLibSharp": "2.2.0"
-        },
-        "compile": {
-          "bin/placeholder/ShareInstances.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/_._": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -133,8 +91,8 @@
     },
     "ShareInstances/1.0.0": {
       "type": "project",
-      "path": "../ShareInstances/ShareInstances.csproj",
-      "msbuildProject": "../ShareInstances/ShareInstances.csproj"
+      "path": "../../Ild-Music.ShareInstances/ShareInstances.csproj",
+      "msbuildProject": "../../Ild-Music.ShareInstances/ShareInstances.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -149,11 +107,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ild_music\\Ild-Music\\SynchronizationBlock\\SynchronizationBlock.csproj",
+      "projectUniqueName": "E:\\ild_music\\zzz\\Ild-Music\\dependencies\\Ild-Music.SynchronizationBlock\\SynchronizationBlock.csproj",
       "projectName": "SynchronizationBlock",
-      "projectPath": "E:\\ild_music\\Ild-Music\\SynchronizationBlock\\SynchronizationBlock.csproj",
+      "projectPath": "E:\\ild_music\\zzz\\Ild-Music\\dependencies\\Ild-Music.SynchronizationBlock\\SynchronizationBlock.csproj",
       "packagesPath": "C:\\Users\\ildar\\.nuget\\packages\\",
-      "outputPath": "E:\\ild_music\\Ild-Music\\SynchronizationBlock\\obj\\",
+      "outputPath": "E:\\ild_music\\zzz\\Ild-Music\\dependencies\\Ild-Music.SynchronizationBlock\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ildar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -168,8 +126,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\ild_music\\Ild-Music\\ShareInstances\\ShareInstances.csproj": {
-              "projectPath": "E:\\ild_music\\Ild-Music\\ShareInstances\\ShareInstances.csproj",
+            "E:\\ild_music\\zzz\\Ild-Music\\Ild-Music.ShareInstances\\ShareInstances.csproj": {
+              "projectPath": "E:\\ild_music\\zzz\\Ild-Music\\Ild-Music.ShareInstances\\ShareInstances.csproj",
               "excludeAssets": "runtime"
             }
           }
@@ -201,31 +159,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[6.0.14, 6.0.14]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[6.0.14, 6.0.14]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.406\\RuntimeIdentifierGraph.json"
-      }
-    },
-    "runtimes": {
-      "win-x64": {
-        "#import": []
       }
     }
   }

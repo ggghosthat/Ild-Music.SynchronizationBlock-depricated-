@@ -1,14 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "KUuAAww0+bW4eyZJBXbYWM0eFE4sphmUKV5wtzgKR/W37vu3018PbND+56iaQAjQT87f+F1nekcdvAzv8/T54g==",
+  "dgSpecHash": "qMNWbvF/74RK+EatNI0DCgasvVp4Lv2p8WQFOuE3iAHtfQcqrgRrbWwvkY53ZWL/E4LdMSGdVz+4hXayHYhplw==",
   "success": true,
-  "projectFilePath": "E:\\ild_music\\Ild-Music\\SynchronizationBlock\\SynchronizationBlock.csproj",
+  "projectFilePath": "E:\\ild_music\\zzz\\Ild-Music\\dependencies\\Ild-Music.SynchronizationBlock\\SynchronizationBlock.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ildar\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
-    "C:\\Users\\ildar\\.nuget\\packages\\taglibsharp\\2.2.0\\taglibsharp.2.2.0.nupkg.sha512",
-    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.14\\microsoft.netcore.app.runtime.win-x64.6.0.14.nupkg.sha512",
-    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.14\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.14.nupkg.sha512",
-    "C:\\Users\\ildar\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.14\\microsoft.aspnetcore.app.runtime.win-x64.6.0.14.nupkg.sha512"
+    "C:\\Users\\ildar\\.nuget\\packages\\taglibsharp\\2.2.0\\taglibsharp.2.2.0.nupkg.sha512"
   ],
   "logs": []
 }
