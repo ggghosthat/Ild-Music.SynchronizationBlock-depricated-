@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qMNWbvF/74RK+EatNI0DCgasvVp4Lv2p8WQFOuE3iAHtfQcqrgRrbWwvkY53ZWL/E4LdMSGdVz+4hXayHYhplw==",
+  "dgSpecHash": "hFGa3w7cd6einFd5m/md/ZDt5Lgtg2sbUvh+EWT1Do/MCvosG8kdeqREdh0YjYKk21IQjGgFneV8zaHtTdCsZg==",
   "success": true,
-  "projectFilePath": "E:\\ild_music\\zzz\\Ild-Music\\dependencies\\Ild-Music.SynchronizationBlock\\SynchronizationBlock.csproj",
+  "projectFilePath": "E:\\ild_music\\Ild-Music\\dependencies\\Ild-Music.SynchronizationBlock\\SynchronizationBlock.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ildar\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\ildar\\.nuget\\packages\\taglibsharp\\2.2.0\\taglibsharp.2.2.0.nupkg.sha512"

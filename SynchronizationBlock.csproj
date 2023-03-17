@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Ild-Music.ShareInstances\ShareInstances.csproj">
+    <ProjectReference Include="..\Ild-Music.ShareInstances\ShareInstances.csproj">
     	<Private>false</Private>
     	<ExcludeAssets>runtime</ExcludeAssets>
     </ProjectReference>

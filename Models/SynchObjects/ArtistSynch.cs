@@ -1,4 +1,4 @@
-﻿using ShareInstances.PlayerResources;
+﻿using ShareInstances.Instances;
 using ShareInstances.Exceptions.SynchAreaExceptions;
 
 using Newtonsoft.Json;
@@ -8,96 +8,94 @@ using System.Collections.Generic;
 using System.IO;
 using System.Diagnostics;
 
-namespace SynchronizationBlock.Models.SynchObjects
+namespace SynchronizationBlock.Models.SynchObjects;
+public class ArtistSynch
 {
-    public class ArtistSynch
+    private string output_pathway = Environment.CurrentDirectory + "/ild_music_artists.json";
+
+    private IList<Artist> artists = new List<Artist>();
+    
+    public IList<Artist> Instances => artists;
+
+    private string path;
+    public string Prefix
     {
-        private string output_pathway = Environment.CurrentDirectory + "/ild_music_artists.json";
-
-        private IList<Artist> artists = new List<Artist>();
+        get => path;
         
-        public IList<Artist> Instances => artists;
-
-        private string path;
-        public string Prefix
+        set
         {
-            get => path;
+            path = value;
+            output_pathway = path + "/ild_music_artists.json";
+        }
+    }
+
+    public void AddInstance(Artist artist)
+    {
+        if(artists.Where(a => a.Name.Equals(artist.Name)).Count() > 0)
+            throw new InvalidArtistException("Unable create new artist instance");
+
+        artists.Add(artist);
+    }
             
-            set
-            {
-                path = value;
-                output_pathway = path + "/ild_music_artists.json";
-            }
-        }
-
-        public void AddInstance(Artist artist)
+    public void EditInstance(Artist need_artist)
+    {
+        try
         {
-            if(artists.Where(a => a.Name.Equals(artist.Name)).Count() > 0)
-                throw new InvalidArtistException("Unable create new artist instance");
-
-            artists.Add(artist);
+            artists.Where(a => a.Id.Equals(need_artist.Id))
+                   .ToList().ForEach(a => a = need_artist);                
         }
-                
-        public void EditInstance(Artist need_artist)
+        catch(Exception ex)
         {
-            try
-            {
-                artists.Where(a => a.Id.Equals(need_artist.Id))
-                       .ToList().ForEach(a => a = need_artist);                
-            }
-            catch(Exception ex)
-            {
-                throw new Exception("This is Edit instances exception happened in synch layer.");
-            }
-
-            // var artist = artists.First(a => a.Id.Equals(need_artist.Id));
-            // var index = artists.IndexOf(artist);
-            // artists[index] = need_artist;
+            throw new Exception("This is Edit instances exception happened in synch layer.");
         }
 
-        public void RemoveInstance(Artist artist)
+        // var artist = artists.First(a => a.Id.Equals(need_artist.Id));
+        // var index = artists.IndexOf(artist);
+        // artists[index] = need_artist;
+    }
+
+    public void RemoveInstance(Artist artist)
+    {
+        if (artists.Contains(artist))
+            artists.Remove(artist);
+    }
+
+
+    public void Serialize()
+    {
+        try
         {
-            if (artists.Contains(artist))
-                artists.Remove(artist);
+            string jsonString = JsonConvert.SerializeObject(artists);
+            File.WriteAllText(output_pathway, string.Empty);
+            File.WriteAllText(output_pathway, jsonString);
         }
-
-
-        public void Serialize()
+        catch (Exception)
         {
-            try
-            {
-                string jsonString = JsonConvert.SerializeObject(artists);
-                File.WriteAllText(output_pathway, string.Empty);
-                File.WriteAllText(output_pathway, jsonString);
-            }
-            catch (Exception)
-            {
-                Debug.WriteLine("Hello am exception");
-                throw;
-            }
+            Debug.WriteLine("Hello am exception");
+            throw;
         }
+    }
 
-        public void Deserialize()
+    public void Deserialize()
+    {
+        try
         {
-            try
-            {
-                string jsonString = File.ReadAllText(output_pathway);
-                artists = JsonConvert.DeserializeObject<List<Artist>>(jsonString);
-            }
-            catch(FileNotFoundException fileNotFound)
-            {
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            
+            string jsonString = File.ReadAllText(output_pathway);
+            artists = JsonConvert.DeserializeObject<List<Artist>>(jsonString);
         }
-
-        public void Update()
+        catch(FileNotFoundException fileNotFound)
         {
-            throw new NotImplementedException();
+
         }
+        catch (Exception)
+        {
+            throw;
+        }
+        
+    }
+
+    public void Update()
+    {
+        throw new NotImplementedException();
     }
 }

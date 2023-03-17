@@ -23,23 +23,7 @@
           }
         }
       },
-      "TagLibSharp/2.2.0": {
-        "runtime": {
-          "lib/netstandard2.0/TagLibSharp.dll": {
-            "assemblyVersion": "2.2.0.0",
-            "fileVersion": "2.2.0.0"
-          }
-        }
-      },
-      "ShareInstances/1.0.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1",
-          "TagLibSharp": "2.2.0"
-        },
-        "runtime": {
-          "ShareInstances.dll": {}
-        }
-      }
+      "TagLibSharp/2.2.0": {}
     }
   },
   "libraries": {
@@ -61,11 +45,6 @@
       "sha512": "sha512-X8UOWeaJgHGrN3xilg3O0lqowhUSwNEiGrE8ITDd1rCn14LqGCWKgn5GX++SW4vuXBMne8+pyic6aUvOFQMRlA==",
       "path": "taglibsharp/2.2.0",
       "hashPath": "taglibsharp.2.2.0.nupkg.sha512"
-    },
-    "ShareInstances/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }

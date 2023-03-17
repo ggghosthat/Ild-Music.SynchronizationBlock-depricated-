@@ -1,4 +1,4 @@
-﻿using ShareInstances.PlayerResources;
+﻿using ShareInstances.Instances;
 using ShareInstances.Exceptions.SynchAreaExceptions;
 
 using Newtonsoft.Json;
@@ -8,100 +8,98 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace SynchronizationBlock.Models.SynchObjects
+namespace SynchronizationBlock.Models.SynchObjects;
+public class TrackSynch
 {
-    public class TrackSynch
+    //<PSTF> -> Plain Single Track File
+
+    protected string output_pathway = Environment.CurrentDirectory + "/ild_music_tracks.json";
+
+
+    //determines a collection of tracks (music files) abstracly
+    private IList<Track> tracks = new List<Track>();
+
+    private string path;
+    public string Prefix 
     {
-        //<PSTF> -> Plain Single Track File
-
-        protected string output_pathway = Environment.CurrentDirectory + "/ild_music_tracks.json";
-
-
-        //determines a collection of tracks (music files) abstracly
-        private IList<Track> tracks = new List<Track>();
-
-        private string path;
-        public string Prefix 
-        {
-            get => path;
-            
-            set 
-            {
-                path = value;
-                output_pathway = path + "/ild_music_tracks.json";
-            }
-        }
-
-        public IList<Track> Instances =>  tracks;
-
-
-
-        public void AddInstance(Track track) 
-        {
-            if(tracks.Where(t => t.Pathway.Equals(track.Pathway)).Count() > 0)
-                throw new InvalidTrackException("Unable create new track instance");
-
-            tracks.Add(track);
-        }
+        get => path;
         
-        public void EditInstance(Track need_track)
+        set 
         {
-            try
-            {
-                tracks.Where(t => t.Id.Equals(need_track.Id))
-                       .ToList().ForEach(t => t = need_track);
-            }
-            catch(Exception ex)
-            {
-                throw new Exception("This is Edit instances exception happened in synch layer.");
-            }
+            path = value;
+            output_pathway = path + "/ild_music_tracks.json";
+        }
+    }
 
-            // var track = tracks.First(a => a.Id.Equals(need_track.Id));
-            // var index = tracks.IndexOf(track);
-            // tracks[index] = need_track;
+    public IList<Track> Instances =>  tracks;
+
+
+
+    public void AddInstance(Track track) 
+    {
+        if(tracks.Where(t => t.Pathway.Equals(track.Pathway)).Count() > 0)
+            throw new InvalidTrackException("Unable create new track instance");
+
+        tracks.Add(track);
+    }
+    
+    public void EditInstance(Track need_track)
+    {
+        try
+        {
+            tracks.Where(t => t.Id.Equals(need_track.Id))
+                   .ToList().ForEach(t => t = need_track);
+        }
+        catch(Exception ex)
+        {
+            throw new Exception("This is Edit instances exception happened in synch layer.");
         }
 
-        public void RemoveInstance(Track track)
+        // var track = tracks.First(a => a.Id.Equals(need_track.Id));
+        // var index = tracks.IndexOf(track);
+        // tracks[index] = need_track;
+    }
+
+    public void RemoveInstance(Track track)
+    {
+        if(tracks.Contains(track))
+            tracks.Remove(track);
+    }
+
+
+    public void Serialize()
+    {
+        try
         {
-            if(tracks.Contains(track))
-                tracks.Remove(track);
+            string jsonString = JsonConvert.SerializeObject(tracks);
+            File.WriteAllText(output_pathway, string.Empty);
+            File.WriteAllText(output_pathway, jsonString);
         }
-
-
-        public void Serialize()
+        catch (Exception)
         {
-            try
-            {
-                string jsonString = JsonConvert.SerializeObject(tracks);
-                File.WriteAllText(output_pathway, string.Empty);
-                File.WriteAllText(output_pathway, jsonString);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            throw;
         }
+    }
 
-        public void Deserialize()
+    public void Deserialize()
+    {
+        try
         {
-            try
-            {
-                string jsonString = File.ReadAllText(output_pathway);
-                tracks = JsonConvert.DeserializeObject<List<Track>>(jsonString);
-            }
-            catch (FileNotFoundException fileNotFound)
-            {
-
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            string jsonString = File.ReadAllText(output_pathway);
+            tracks = JsonConvert.DeserializeObject<List<Track>>(jsonString);
         }
-
-        public void Update()
+        catch (FileNotFoundException fileNotFound)
         {
-            throw new NotImplementedException();
+
         }
+        catch (Exception)
+        {
+            throw;
+        }
+    }
+
+    public void Update()
+    {
+        throw new NotImplementedException();
     }
 }
