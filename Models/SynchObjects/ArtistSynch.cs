@@ -32,7 +32,9 @@ public class ArtistSynch
     public void AddInstance(Artist artist)
     {
         if(artists.Where(a => a.Name.Equals(artist.Name)).Count() > 0)
-            throw new InvalidArtistException("Unable create new artist instance");
+        {
+            return;
+        }
 
         artists.Add(artist);
     }

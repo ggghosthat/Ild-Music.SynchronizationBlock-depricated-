@@ -34,7 +34,9 @@ public class PlaylistSynch
     public void AddInstance(Playlist playlist)
     {            
         if(playlists.Where(p => p.Name.Equals(playlist.Name)).Count() > 0)
-            throw new InvalidPlaylistException("Unable create new playlist instance");
+        {
+            return;
+        }
         playlists.Add(playlist);
     }
     

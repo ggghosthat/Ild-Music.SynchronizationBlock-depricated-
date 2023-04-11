@@ -38,7 +38,9 @@ public class TrackSynch
     public void AddInstance(Track track) 
     {
         if(tracks.Where(t => t.Pathway.Equals(track.Pathway)).Count() > 0)
-            throw new InvalidTrackException("Unable create new track instance");
+        {
+            return;
+        }
 
         tracks.Add(track);
     }
