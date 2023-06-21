@@ -102,19 +102,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ildar\\.nuget\\packages\\": {}
+    "C:\\Users\\LEYA\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\ild_music\\Ild-Music\\dependencies\\Ild-Music.SynchronizationBlock\\SynchronizationBlock.csproj",
+      "projectUniqueName": "D:\\repos\\Ild-Music.SynchronizationBlock\\SynchronizationBlock.csproj",
       "projectName": "SynchronizationBlock",
-      "projectPath": "E:\\ild_music\\Ild-Music\\dependencies\\Ild-Music.SynchronizationBlock\\SynchronizationBlock.csproj",
-      "packagesPath": "C:\\Users\\ildar\\.nuget\\packages\\",
-      "outputPath": "E:\\ild_music\\Ild-Music\\dependencies\\Ild-Music.SynchronizationBlock\\obj\\",
+      "projectPath": "D:\\repos\\Ild-Music.SynchronizationBlock\\SynchronizationBlock.csproj",
+      "packagesPath": "C:\\Users\\LEYA\\.nuget\\packages\\",
+      "outputPath": "D:\\repos\\Ild-Music.SynchronizationBlock\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ildar\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\LEYA\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -126,8 +126,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "E:\\ild_music\\Ild-Music\\dependencies\\Ild-Music.ShareInstances\\ShareInstances.csproj": {
-              "projectPath": "E:\\ild_music\\Ild-Music\\dependencies\\Ild-Music.ShareInstances\\ShareInstances.csproj",
+            "D:\\repos\\Ild-Music.ShareInstances\\ShareInstances.csproj": {
+              "projectPath": "D:\\repos\\Ild-Music.ShareInstances\\ShareInstances.csproj",
               "excludeAssets": "runtime"
             }
           }
@@ -164,7 +164,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.406\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.410\\RuntimeIdentifierGraph.json"
       }
     }
   }
