@@ -8,10 +8,10 @@ using ShareInstances;
 using System.Collections.Generic;
 
 namespace SynchronizationBlock.Models.SynchArea;
-public class Area : ISynchArea
+public class Area : ICube
 {
     public Guid AreaId => Guid.NewGuid();
-    public string AreaName => "BaseSynch";
+    public ReadOnlyMemory<char> CubeName => "Genezis Cube".AsMemory();
 
 
     private TrackSynch trackSynch = new TrackSynch();

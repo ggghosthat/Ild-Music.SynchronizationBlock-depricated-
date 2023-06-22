@@ -40,17 +40,16 @@ public class PlaylistSynch
         playlists.Add(playlist);
     }
     
-    public void EditInstance(Playlist playlist_update)
+    public void EditInstance(Playlist new_playlist)
     {
         try
         {
-            Playlist old = playlists.FirstOrDefault<Playlist>(p => p.Id.Equals(playlist_update.Id));
-            //if (old != default)
-            //{
-                old.Name = playlist_update.Name;
-                old.Description = playlist_update.Description;
-                old.Tracks = playlist_update.Tracks;
-            //}
+            Playlist old = playlists.FirstOrDefault<Playlist>(p => p.Id.Equals(new_playlist.Id));
+
+            old.Name = new_playlist.Name;
+            old.Description = new_playlist.Description;
+            old.AvatarBase64 = new_playlist.AvatarBase64;
+            old.RecoverTracks(new_playlist.GetTracks().ToList());
         }
         catch(Exception ex)
         {
